@@ -55,3 +55,56 @@ SF-Budget-Intelligence/
 ├── requirements.txt
 └── README.md
 ```
+
+---
+
+## 🔍 Methods
+
+### 1. SQL Data Modeling & Cleaning
+- Designed a star schema with `fact_budget` and supporting dimension tables (`dim_department`, `dim_date`).
+- Wrote SQL queries for:
+  - Budget vs. actual variance
+  - Year‑over‑year growth
+  - Compliance KPIs (departments within ±5% of budget)
+
+### 2. Python EDA
+- Loaded cleaned data into pandas for exploration.
+- Visualized budget vs. actual trends by department and fiscal year.
+- Highlighted outliers and anomalies with seaborn/matplotlib plots.
+
+### 3. R Statistical Analysis
+- Conducted hypothesis testing (t‑tests, ANOVA) on spending patterns.
+- Built confidence intervals for variance across years.
+- Used survival/inference techniques to analyze persistence of overspending.
+
+### 4. Machine Learning / Forecasting
+- Built time series forecasts (Prophet/ARIMA) for department budgets.
+- Trained classification models (Logistic Regression, XGBoost) to predict overspending risk.
+- Evaluated models with accuracy, recall, RMSE, and PR‑AUC.
+
+### 5. Visualization & Storytelling
+- Developed Tableau/Power BI dashboards for executive‑level reporting.
+- Built a Streamlit app for interactive “what‑if” budget scenarios.
+- Created RMarkdown reports for statistical summaries.
+
+---
+
+## 📈 Results (to be filled in)
+- Key insights from SQL queries
+- EDA highlights
+- Forecasting accuracy metrics
+- Dashboard screenshots
+
+---
+
+## 🚀 Next Steps
+- Expand forecasting models with external drivers (e.g., inflation, population).
+- Enhance Streamlit app with department‑level drilldowns.
+- Automate ETL pipeline for continuous updates.
+
+---
+
+## 📬 Contact
+For questions or collaboration:  
+- **LinkedIn:** [Joseph Tulani Aytch](https://www.linkedin.com/in/josephtulaniaytch)  
+- **Email:** tulan94@gmail.com
