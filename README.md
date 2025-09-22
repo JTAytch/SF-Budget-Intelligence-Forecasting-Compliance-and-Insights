@@ -108,3 +108,45 @@ SF-Budget-Intelligence/
 For questions or collaboration:  
 - **LinkedIn:** [Joseph Tulani Aytch](https://www.linkedin.com/in/josephtulaniaytch)  
 - **Email:** tulan94@gmail.com
+
+---
+
+## ✅ Project Progress Tracker
+
+- [x] **Day 1–2:** Project setup & initial data ingestion  
+  - Created GitHub repo and README skeleton  
+  - Downloaded SF Budget dataset  
+  - Ran initial SQL checks (row counts, nulls, duplicates)
+
+- [ ] **Day 3–4:** SQL data modeling & cleaning  
+  - Design star schema (fact + dimensions)  
+  - Write queries for variance, YOY growth, compliance KPIs  
+
+- [ ] **Day 5–6:** Python EDA  
+  - Load cleaned data into pandas  
+  - Visualize budget vs actual trends  
+  - Identify anomalies and outliers  
+
+- [ ] **Day 7–8:** R statistical analysis  
+  - Run hypothesis tests (t‑tests, ANOVA)  
+  - Build confidence intervals for variance  
+  - Document results in RMarkdown  
+
+- [ ] **Day 9–10:** Machine learning / forecasting  
+  - Build baseline time series forecast (Prophet/ARIMA)  
+  - Train overspend classifier (Logistic Regression/XGBoost)  
+  - Evaluate with accuracy, recall, RMSE  
+
+- [ ] **Day 11–12:** Visualization & app  
+  - Tableau/Power BI dashboard with KPIs and forecasts  
+  - Streamlit app for “what‑if” budget scenarios  
+
+- [ ] **Day 13:** Documentation & polish  
+  - Fill in README results and visuals  
+  - Add screenshots of dashboards and plots  
+
+- [ ] **Day 14:** Portfolio integration  
+  - Draft resume bullets  
+  - Write LinkedIn post  
+  - Final repo cleanup (requirements.txt, SQL scripts, RMarkdown)
+
