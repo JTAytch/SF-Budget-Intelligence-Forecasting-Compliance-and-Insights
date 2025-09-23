@@ -8,6 +8,10 @@
 ---
 
 ## ✅ Overview
+- **Original File Size:** ~140 MB (too large for GitHub’s 100 MB limit)  
+- **Current Setup:** Split into two files:  
+  - `Budget_20250921-1.csv`  
+  - `Budget_20250921-2.csv`  
 - **Total Rows:** 379557  
 - **Total Columns:** 24  
 - **Timeframe Covered:** 2018  
