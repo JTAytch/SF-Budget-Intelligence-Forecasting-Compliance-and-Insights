@@ -1,0 +1,58 @@
+# 📊 Day 1–2 Data Quality Report
+
+**Project:** SF Budget Intelligence: Forecasting, Compliance, and Insights  
+**Dataset:** Budget_20250921.csv  
+**Date:** YYYY-MM-DD  
+**Author:** Joseph Tulani Aytch  
+
+---
+
+## ✅ Overview
+- **Total Rows:** 379557  
+- **Total Columns:** 24  
+- **Timeframe Covered:** 2018  
+- **Key Entities:** Departments, Programs, Funds, Org Groups  
+
+---
+
+## 🔍 Column Summary
+| Column Name              | Non-Null Count | Data Type | Notes |
+|---------------------------|----------------|-----------|-------|
+| Fiscal Year              | [count]        | int64     | Range: [min]–[max] |
+| Revenue or Spending      | [count]        | object    | Values: Revenue / Spending |
+| Department               | [count]        | object    | Example: Public Health |
+| Program                  | [count]        | object    | Example: Homeless Services |
+| Fund                     | [count]        | object    | 1 missing value |
+| Fund Category Code       | [count]        | float64   | Some nulls |
+| Budget                   | [count]        | object    | Needs conversion to numeric |
+| ...                      | ...            | ...       | ... |
+
+---
+
+## 🕵️ Null & Missing Values
+- Columns with nulls:  
+  - Fund (1 missing)  
+  - Fund Category Code / Fund Category (~22 missing)  
+- All other columns complete.
+
+---
+
+## 📑 Duplicate Checks
+- **Total duplicate rows:** [number]  
+- **Duplicates by Fiscal Year + Department + Fund + Program:** [number]  
+- Notes: [e.g., “Some duplicates appear to be legitimate multi-fund allocations”]
+
+---
+
+## 📈 Initial Observations
+- Budget column is stored as text (`object`), likely due to commas or formatting → will need cleaning.  
+- Fiscal Years range from [min] to [max].  
+- Departments: [number unique].  
+- Programs: [number unique].  
+
+---
+
+## 📌 Next Steps
+- Clean and convert `Budget` column to numeric.  
+- Decide on primary keys for deduplication (likely Fiscal Year + Department + Program + Fund).  
+- Prepare schema for PostgreSQL ingestion.  

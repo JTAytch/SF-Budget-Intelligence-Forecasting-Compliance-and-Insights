@@ -1,0 +1,84 @@
+# 🗄️ Day 3–4 Report: SQL Data Modeling & Cleaning
+
+**Project:** SF Budget Intelligence: Forecasting, Compliance, and Insights  
+**Database:** sf_budget (PostgreSQL)  
+**Date:** YYYY-MM-DD  
+**Author:** Joseph Tulani Aytch  
+
+---
+
+## ✅ Overview
+- **Source Table:** `budget_raw` (CSV import)  
+- **Cleaned Table:** `budget_stage` (budget converted to numeric)  
+- **Schema Design:** Star schema with fact + dimension tables  
+- **Deliverables:** `schema.sql`, `queries.sql`, this report  
+
+---
+
+## 🧹 Data Cleaning
+- Converted `budget` column → `budget_amount NUMERIC(18,2)`  
+- Removed commas and empty strings before casting  
+- Null handling:
+  - `fund` → 1 missing value  
+  - `fund_category` → ~22 missing values  
+- Deduplication strategy: `(fiscal_year, department_code, program_code, fund_code, object_code, sub_object_code)`  
+
+---
+
+## 🌟 Star Schema Design
+
+### Fact Table
+- **`fact_budget`**
+  - fiscal_year  
+  - revenue_or_spending  
+  - budget_amount  
+  - department_code (FK)  
+  - program_code (FK)  
+  - fund_code (FK)  
+  - organization_group_code (FK)  
+  - character_code (FK)  
+  - object_code (FK)  
+  - sub_object_code (FK)  
+
+### Dimension Tables
+- **`dim_department`**: department_code, department  
+- **`dim_program`**: program_code, program  
+- **`dim_fund`**: fund_code, fund, fund_type_code, fund_type, fund_category_code, fund_category  
+- **`dim_org_group`**: organization_group_code, organization_group  
+- **`dim_character`**: character_code, character  
+- **`dim_object`**: object_code, object  
+- **`dim_subobject`**: sub_object_code, sub_object  
+
+---
+
+## 📊 Analytical Queries
+
+### 1. Year‑Over‑Year Growth
+**Description:**  
+Calculated each department’s total budget by fiscal year and compared it to the previous year to measure growth or decline.  
+
+**Findings:**  
+- **Steady Growth Departments:** [list departments with consistent YOY increases]  
+- **Declining Departments:** [list departments with negative YOY trends]  
+- **Volatile Departments:** [list departments with large swings across years]  
+
+---
+
+### 2. Compliance KPI (Budget Spikes)
+**Description:**  
+Flagged departments with unusually large year‑over‑year changes (greater than ±20%) to highlight potential compliance or oversight risks.  
+
+**Findings:**  
+- **Flagged Departments (>20% YOY swings):**  
+  - Department: [name], Year: [year], YOY %: [value]  
+  - Department: [name], Year: [year], YOY %: [value]  
+- **Potential Compliance Risks:** [brief notes on why these spikes matter]  
+
+---
+
+## 📌 Next Steps
+- Add indexes on foreign keys for faster joins.  
+- Explore variance analysis once “Actuals” dataset is available.  
+- Build BI dashboard (Tableau/Power BI) using fact + dimensions.  
+
+```
